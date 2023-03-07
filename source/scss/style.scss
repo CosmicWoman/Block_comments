@@ -1,0 +1,161 @@
+@import "stylenull.scss";
+@import "fonts.scss";
+
+body{
+  background: #dde3ec;
+  font-family: 'Helvetica';
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.wrapper{
+  width: 900px;
+  position: absolute;
+  background: #FFFFFF;
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+}
+
+.content{
+  .post{
+    margin-bottom: 30px;
+    .post_title{
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin: 20px 0 10px 20px;
+    }
+    .post_product{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img{
+        width: 840px;
+        margin: 10px 0 0 0;
+      }
+      .product_text{
+        font-weight: 300;
+        font-size: 12px;
+      }
+      .product_price{
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .block_leave_comment{
+    border-top: 1px solid rgba(221, 227, 236, 0.5);
+    border-bottom: 1px solid rgba(221, 227, 236, 0.5);
+    margin: 0 20px 20px 20px;
+    overflow: hidden;
+    .block_leave_comment_name{
+      margin: 30px 0 10px 50px;
+      input{
+        border: 1px solid #dde3ec;
+        border-radius: 10px;
+        padding: 5px 0 5px 10px;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .block_leave_comment_text{
+      margin: 10px 0 10px 50px;
+      textarea{
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.5);
+        width: 800px;
+        height: 50px;
+        border: 1px solid #dde3ec;
+        border-radius: 10px;
+        padding: 10px 0 0 10px;
+        resize: none;
+        }
+    }
+    .block_leave_comment_date{
+      margin: 10px 0 10px 50px;
+      input{
+        border: 1px solid #dde3ec;
+        border-radius: 10px;
+        padding: 5px 0 5px 10px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .block_leave_comment_send{
+      float: right;
+      background: #dde3ec;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 5px 10px 5px 10px;
+      margin: 0 10px 30px 0;
+    }
+  }
+  .comments{
+    .comments_title{
+      font-weight: 700;
+      font-size: 14px;
+      margin: 50px 20px 20px 20px;
+      padding: 0 0 5px 10px;
+      border-bottom: 1px solid rgba(221, 227, 236, 0.5);
+    }
+    .comments_list{
+      width: 840px;
+      margin: 30px 0 30px 30px;
+      .comment{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 0 40px 0;
+        .comment_name{
+          flex: 0 1 100%;
+          font-weight: 700;
+          font-size: 18px;
+          margin: 0 0 10px 0;
+          color: rgba(0, 0, 0, 0.8);
+        }
+        .comment_text{
+          flex: 0 1 100%;
+          margin: 0 0 10px 0;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.8);
+        }
+        .comment_date{
+          flex: 0 1 50%;
+          font-size: 12px;
+          color: rgba(0, 0, 0, 0.7);
+        }
+        .comment_button{
+          flex: 0 1 50%;
+          padding: 0 0 0 320px;
+          .comment_like{
+            margin: 0 40px 0 0;
+            padding: 0 0 0 15px;
+            height: 14px;
+            width: 14px;
+            background: url("/img/like.svg") no-repeat;
+            background-size: 14px;
+            opacity: 0.6;
+          }
+          .comment_like_true{
+            margin: 0 40px 0 0;
+            padding: 0 0 0 15px;
+            height: 14px;
+            width: 14px;
+            background: url("/img/like_true.svg") no-repeat;
+            background-size: 14px;
+            opacity: 0.6;
+          }
+          .comment_delete{
+            height: 14px;
+            width: 14px;
+            background: url("/img/trash.svg") no-repeat;
+            background-size: 14px;
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}
+
