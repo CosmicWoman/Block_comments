@@ -30,20 +30,22 @@
             </div>
         </div>
 
-        <div class="block_leave_comment">
+        <div class="block_leave_comment" id="comment">
             <div class="block_leave_comment_row">
                 <div class="container">
 
-                    <div class="block_leave_comment_name">
-                        <input id="input_name" type="text" placeholder="Введите Ваше имя" required>
-                    </div>
-                    <div class="block_leave_comment_text">
-                        <textarea name="" id="input_text" cols="30" rows="10" placeholder="Поспешите оставить свой отзыв!" required></textarea>
-                    </div>
-                    <div class="block_leave_comment_date">
-                        <input id="input_date" type="date">
-                    </div>
-                    <button class="block_leave_comment_send">Отправить</button>
+                    <form action="">
+                        <div class="block_leave_comment_name">
+                            <input id="input_name" type="text" placeholder="Введите Ваше имя" required>
+                        </div>
+                        <div class="block_leave_comment_text">
+                            <textarea name="" id="input_text" cols="30" rows="10" placeholder="Поспешите оставить свой отзыв!" required></textarea>
+                        </div>
+                        <div class="block_leave_comment_date">
+                            <input id="input_date" type="date">
+                        </div>
+                        <button class="block_leave_comment_send">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -53,38 +55,6 @@
                 <div class="container">
                     <div class="comments_title">Все отзывы</div>
                     <div class="comments_list">
-                        <div class="comment">
-                            <div class="comment_name"> Name</div>
-                            <div class="comment_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequatur cumque dignissimos doloribus iste laudantium optio suscipit tenetur unde vitae!
-                            </div>
-                            <div class="comment_date">
-                                11.08.2005
-                            </div>
-                            <div class="comment_button">
-                                <button class="comment_like" data-counter="12">
-                                    12
-                                </button>
-                                <button class="comment_delete">
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="comment">
-                            <div class="comment_name"> Name</div>
-                            <div class="comment_text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequatur cumque dignissimos doloribus iste laudantium optio suscipit tenetur unde vitae!
-                            </div>
-                            <div class="comment_date">
-                                11.08.2005
-                            </div>
-                            <div class="comment_button">
-                                <button class="comment_like comment_like_true" data-counter="9">9
-                                </button>
-                                <button class="comment_delete">
-                                </button>
-                            </div>
-                        </div>
 
                     </div>
                 </div>

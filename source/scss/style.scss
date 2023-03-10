@@ -59,6 +59,10 @@ body{
         font-weight: 300;
         color: rgba(0, 0, 0, 0.5);
       }
+      .name_error_short, .name_error_symbol{
+        font-size: 12px;
+        color: rgba(220, 20, 60, 0.7);
+      }
     }
     .block_leave_comment_text{
       margin: 10px 0 10px 50px;
@@ -72,6 +76,10 @@ body{
         padding: 10px 0 0 10px;
         resize: none;
         }
+      .text_error_short{
+        font-size: 12px;
+        color: rgba(220, 20, 60, 0.7);
+      }
     }
     .block_leave_comment_date{
       margin: 10px 0 10px 50px;
@@ -80,6 +88,10 @@ body{
         border-radius: 10px;
         padding: 5px 0 5px 10px;
         color: rgba(0, 0, 0, 0.5);
+      }
+      .date_error{
+        font-size: 12px;
+        color: rgba(220, 20, 60, 0.7);
       }
     }
     .block_leave_comment_send{
