@@ -39,7 +39,7 @@ function formSubmit(event) {
 }
 
 function createComment(review){
-    let parent = document.querySelector('.comments_list')
+    let parent = document.querySelector('.comments_list');
     let firstChild = parent.firstChild;
     let comment = document.createElement('div');
     comment.classList.add('comment');
@@ -130,15 +130,12 @@ function validateName(review) {
     console.log(review.name, typeof(review.name));
     let nameLength = name.length;
     let parent = document.querySelector('.block_leave_comment_name');
-    let nameShort = document.querySelector('.name_error_short');
-    if (nameLength <= 2 && !nameShort) {
-        let nameShort = document.createElement('span');
-        nameShort.classList.add('name_error_short');
-        parent.appendChild(nameShort);
+    let nameShort = parent.querySelector('.text_error_short');
+    if (nameLength <= 2) {
         nameShort.textContent = '*слишком короткое имя';
         return false
-    } else if(nameShort) {
-        parent.removeChild(nameShort)
+    } else {
+        nameShort.textContent = ''
     }
     return true
 }
@@ -147,16 +144,13 @@ function errorName(){
     console.log('errorName')
     let regex = /^[a-zA-Zа-яА-ЯЁё]+$/g;
     let parent = document.querySelector('.block_leave_comment_name');
-    let errorSymbol = document.querySelector('.name_error_symbol');
+    let errorSymbol = parent.querySelector('.text_error_short');
     let isError = this.value && regex.test(this.value) === false;
-    if (isError && !errorSymbol) {
-        errorSymbol = document.createElement('span');
-        errorSymbol.classList.add('name_error_symbol');
-        parent.appendChild(errorSymbol);
+    if (isError) {
         errorSymbol.textContent = '*пожалуйста, используйте только буквы для ввода имени';
         return false
-    } else if(errorSymbol) {
-        parent.removeChild(errorSymbol)
+    } else {
+        errorSymbol.textContent = ''
     }
     return true
 }
@@ -165,15 +159,12 @@ function validateReview(review) {
     console.log('validateReview');
     let stringLength = review.text.length;
     let parent = document.querySelector('.block_leave_comment_text');
-    let textShort = document.querySelector('.text_error_short');
-    if (stringLength <= 100 && !textShort) {
-        let textShort = document.createElement('span');
-        textShort.classList.add('text_error_short');
-        parent.appendChild(textShort);
-        textShort.textContent = '*Ваш отзыв слишком которкий. Чтобы он был полезен другим покупателям, дополните его';
+    let textShort = parent.querySelector('.text_error_short');
+    if (stringLength <= 100) {
+        textShort.textContent = '*Отзыв должен содержать не менее 100 символов, чтобы он был полезен другим покупателям';
         return false
-    } else if (textShort){
-        parent.removeChild(textShort)
+    } else {
+        textShort.textContent = ''
     }
     return true
 }
@@ -185,24 +176,22 @@ function checkDate(review){
     let revD = review.date;
     let date = revD.toLocaleDateString();
     let parent = document.querySelector('.block_leave_comment_date');
-    let errorDate = document.querySelector('.date_error');
+    let errorDate = parent.querySelector('.text_error_short');
     if(date > today){
-        let errorDate = document.createElement('span');
-        errorDate.classList.add('date_error');
-        parent.appendChild(errorDate);
         errorDate.textContent = '*Вы из будущего? К сожалению, в нашем времени эта дата ещё не наступила (';
         return false
     } else if(errorDate) {
-        parent.removeChild(errorDate);
+        errorDate.textContent = ''
     }
     return true
 }
 
 function validateForm(review){
     console.log('validateForm');
-    if (checkDate(review) && validateReview(review) && validateName(review) && errorName()){
-        return true;
-    }
+    let result = checkDate(review);
+    result &= validateReview(review);
+    result &= validateName(review) && errorName();
+    return result
 }
 
 function deleteForm(review) {
@@ -210,4 +199,9 @@ function deleteForm(review) {
         e.preventDefault();
         e.target.reset();
     })
+}
+
+function gf(){
+    let textShort = this.closest('.field').querySelector('.text_error_short');
+    textShort.textContent = ''
 }

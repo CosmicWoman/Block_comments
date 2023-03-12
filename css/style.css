@@ -162,7 +162,7 @@ body {
   font-weight: 300;
   color: rgba(0, 0, 0, 0.5);
 }
-.content .block_leave_comment .block_leave_comment_name .name_error_short, .content .block_leave_comment .block_leave_comment_name .name_error_symbol {
+.content .block_leave_comment .block_leave_comment_name .text_error_short {
   font-size: 12px;
   color: rgba(220, 20, 60, 0.7);
 }
@@ -192,7 +192,7 @@ body {
   padding: 5px 0 5px 10px;
   color: rgba(0, 0, 0, 0.5);
 }
-.content .block_leave_comment .block_leave_comment_date .date_error {
+.content .block_leave_comment .block_leave_comment_date .text_error_short {
   font-size: 12px;
   color: rgba(220, 20, 60, 0.7);
 }

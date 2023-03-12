@@ -10,6 +10,6 @@ set_event_on_keydown('.block_leave_comment',  enter);
 
 set_event_on_keyup('#input_name', errorName);
 
-// set_event_on_change('#input_name', validateName)
+set_event_on_keydown('#input_text',  gf);
 
-// set_event_on_change('#input_text', validateReview);
+set_event_on_change('#input_date',  gf);
